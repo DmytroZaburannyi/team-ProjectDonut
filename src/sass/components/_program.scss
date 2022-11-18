@@ -1,65 +1,136 @@
+/* img {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+} */
 .section-program {
   padding-top: 28px;
 
-  background-color: #fff;
+  background-color: #f6f7f7;
 }
 
 .section-header {
-  margin-bottom: 8px;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.2;
+  @media screen and (min-width: $mob) {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
+    color: #3c322d;
+  }
+  @media screen and (min-width: $tabl) {
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.2;
+    color: #3c322d;
+  }
+  @media screen and (min-width: $desc) {
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.2;
+    color: #3c322d;
+  }
 }
 
 .section-text {
-  display: flex;
-  margin-bottom: 8px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.25;
+  @media screen and (min-width: $mob) {
+    display: flex;
+    width: 280px;
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  @media screen and (min-width: $tabl) {
+    display: flex;
+    width: 326px;
+    margin-bottom: 12px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  @media screen and (min-width: $desc) {
+    display: flex;
+    margin-bottom: 20px;
+    width: 392px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.22;
+    color: #3c322d;
+  }
 }
 
 .read-more__header {
   display: flex;
   justify-content: left;
   margin-top: 16px;
+  @media screen and (min-width: $desc) {
+    display: none;
+  }
+}
+
+.read-more__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  @media screen and (min-width: $mob) {
+    display: none;
+  }
+  @media screen and (min-width: $tabl) {
+    display: none;
+  }
+  @media screen and (min-width: $desc) {
+    display: block;
+  }
 }
 
 .container__program {
-  @media screen and (width: $mob) {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  @media screen and (min-width: $mob) {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
-  @media screen and (width: $tabl) {
-    display: flex;
-
+  @media screen and (min-width: $tabl) {
     flex-direction: row;
-    justify-content: center;
     align-items: center;
   }
 
-  @media screen and (width: $desc) {
-    display: flex;
-
+  @media screen and (min-width: $desc) {
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    align-items: baseline;
+  }
+}
+
+.program-list__header {
+  @media screen and (min-width: $mob) {
+  }
+  @media screen and (min-width: $tabl) {
+    width: 329px;
+    margin-right: 39px;
+  }
+  @media screen and (min-width: $desc) {
+    width: 415px;
+    margin-right: 0;
+    margin-top: 160px;
   }
 }
 
 .program-list {
-  @media screen and (width: $tabl) {
-    max-width: 380px;
-  }
-  @media screen and (width: $desc) {
-    max-width: 380px;
-  }
 }
 
 .program-list__item:not(:last-child) {
-  margin-bottom: 8px;
+  @media screen and (min-width: $mob) {
+    margin-bottom: 8px;
+  }
+  @media screen and (min-width: $tabl) {
+    margin-bottom: 12px;
+  }
+  @media screen and (min-width: $desc) {
+    margin-bottom: 16px;
+  }
 }
 
 .program-list__text {
@@ -79,22 +150,171 @@
   left: 8px;
 }
 
+.program-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.read-more-list__item {
+  position: relative;
+}
+
+.read-more-list__item:nth-child(1) {
+  @media screen and (min-width: $mob) {
+    margin-bottom: 10px;
+  }
+  @media screen and (min-width: $tabl) {
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: $desc) {
+    margin-bottom: 37px;
+  }
+}
+
+.read-more__overflow {
+  position: absolute;
+  top: 50;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.read-more__background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(
+    359.91deg,
+    #000000 -9.13%,
+    rgba(156, 156, 156, 0) 92.37%
+  );
+  border: 1px solid #f3848c;
+  border-radius: 50%;
+}
+
 .read-more-list {
 }
 
 .couple-lists {
   display: flex;
-  justify-content: center;
+  @media screen and (min-width: $mob) {
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (min-width: $tabl) {
+    width: 290px;
+    margin-right: 0;
+  }
+
+  @media screen and (min-width: $desc) {
+    margin-right: 0;
+    margin-left: 116px;
+    width: 716px;
+  }
 }
 
 .first {
-  margin-top: 24px;
-  margin-right: 20px;
-}
-
-.read-more-list__item {
+  @media screen and (min-width: $mob) {
+    margin-right: 20px;
+    margin-bottom: 24px;
+  }
+  @media screen and (min-width: $tabl) {
+    margin-right: 30px;
+    margin-bottom: 39px;
+  }
+  @media screen and (min-width: $desc) {
+    margin-right: 100px;
+    margin-bottom: 52px;
+    margin-top: 105px;
+  }
 }
 
 .second {
-  margin-top: 44px;
+  margin-bottom: 0;
+  margin-right: auto;
+  @media screen and (min-width: $desc) {
+    margin-right: 100px;
+    margin-top: 161px;
+  }
+}
+
+.read-more__overflow--text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+
+  color: #ffffff;
+  @media screen and (min-width: $mob) {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #ffffff;
+  }
+
+  @media screen and (min-width: $tabl) {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #ffffff;
+  }
+  @media screen and (min-width: $desc) {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+.read-more__overflow--header {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: #ffffff;
+  @media screen and (min-width: $mob) {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  @media screen and (min-width: $tabl) {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    text-align: center;
+    color: #ffffff;
+  }
+  @media screen and (min-width: $desc) {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+  }
 }
