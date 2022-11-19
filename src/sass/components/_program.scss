@@ -9,6 +9,25 @@
   background-color: #f6f7f7;
 }
 
+.container__program {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  @media screen and (min-width: $mob) {
+    justify-content: center;
+    flex-direction: column;
+  }
+  @media screen and (min-width: $tabl) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @media screen and (min-width: $desc) {
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
+
 .section-header {
   @media screen and (min-width: $mob) {
     margin-bottom: 8px;
@@ -66,15 +85,31 @@
   display: flex;
   justify-content: left;
   margin-top: 16px;
+  @media screen and (min-width: $mob) {
+  }
+  @media screen and (min-width: $desc) {
+    display: none;
+  }
   @media screen and (min-width: $desc) {
     display: none;
   }
 }
 
-.read-more__text {
+.about-wrapper__text--more {
+  @media screen and (max-width: $pre-desc) {
+    opacity: 0;
+    font-size: 0;
+    transition: opacity 250ms cubic-bezier(0.165, 0.84, 0.44, 1),
+      font-size 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+}
+
+/* .read-more__text {
+  margin-top: 20px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
+  display: none;
   @media screen and (min-width: $mob) {
     display: none;
   }
@@ -84,23 +119,12 @@
   @media screen and (min-width: $desc) {
     display: block;
   }
-}
+} */
 
-.container__program {
-  display: flex;
-  flex-wrap: wrap;
-  height: auto;
-  @media screen and (min-width: $mob) {
-    flex-direction: column;
-  }
-  @media screen and (min-width: $tabl) {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  @media screen and (min-width: $desc) {
-    flex-direction: row;
-    align-items: baseline;
+.is-open {
+  @media screen and (max-width: $pre-desc) {
+    font-size: 16px;
+    opacity: 1;
   }
 }
 
@@ -109,12 +133,35 @@
   }
   @media screen and (min-width: $tabl) {
     width: 329px;
-    margin-right: 39px;
+    margin-top: 52px;
   }
   @media screen and (min-width: $desc) {
     width: 415px;
     margin-right: 0;
-    margin-top: 160px;
+    margin-top: 130px;
+  }
+}
+
+.read-more-btn {
+  @media screen and (max-width: $pre-disc) {
+    display: block;
+    align-items: flex-start;
+    padding: 0;
+    margin-top: 16px;
+    outline: none;
+    border: none;
+    background-color: inherit;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: brown;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: rgba(60, 50, 45, 0.8);
+    }
   }
 }
 
@@ -161,21 +208,9 @@
   position: relative;
 }
 
-.read-more-list__item:nth-child(1) {
-  @media screen and (min-width: $mob) {
-    margin-bottom: 10px;
-  }
-  @media screen and (min-width: $tabl) {
-    margin-bottom: 40px;
-  }
-  @media screen and (min-width: $desc) {
-    margin-bottom: 37px;
-  }
-}
-
 .read-more__overflow {
   position: absolute;
-  top: 50;
+  top: 30;
   bottom: 0;
   left: 0;
   right: 0;
@@ -184,6 +219,12 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  @media screen and (min-width: $tabl) {
+    top: 50;
+  }
+  @media screen and (min-width: $desc) {
+    top: 150;
+  }
 }
 
 .read-more__background {
@@ -198,12 +239,27 @@
   align-items: center;
   width: 100%;
   background: linear-gradient(
-    359.91deg,
-    #000000 -9.13%,
-    rgba(156, 156, 156, 0) 92.37%
+    359.99deg,
+    #000000 -9.2%,
+    rgba(156, 156, 156, 0) 97.68%
   );
   border: 1px solid #f3848c;
   border-radius: 50%;
+  @media screen and (min-width: $desc) {
+    background: linear-gradient(
+      360deg,
+      #000000 -7.06%,
+      rgba(156, 156, 156, 0) 87.5%
+    );
+  }
+
+  @media screen and (min-width: $desc) {
+    background: linear-gradient(
+      1.79deg,
+      #000000 -8.34%,
+      rgba(156, 156, 156, 0) 69.2%
+    );
+  }
 }
 
 .read-more-list {
@@ -211,15 +267,12 @@
 
 .couple-lists {
   display: flex;
-  @media screen and (min-width: $mob) {
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   @media screen and (min-width: $tabl) {
     width: 290px;
-    margin-right: 0;
   }
 
   @media screen and (min-width: $desc) {
@@ -230,28 +283,54 @@
 }
 
 .first {
-  @media screen and (min-width: $mob) {
-    margin-right: 20px;
-    margin-bottom: 24px;
-  }
+  margin-right: 20px;
+  padding-top: 24px;
   @media screen and (min-width: $tabl) {
-    margin-right: 30px;
-    margin-bottom: 39px;
+    padding-top: 99px;
   }
   @media screen and (min-width: $desc) {
-    margin-right: 100px;
-    margin-bottom: 52px;
-    margin-top: 105px;
+    padding-top: 72px;
   }
 }
 
 .second {
-  margin-bottom: 0;
   margin-right: auto;
-  @media screen and (min-width: $desc) {
-    margin-right: 100px;
-    margin-top: 161px;
+  margin-left: auto;
+  padding-top: 44px;
+
+  @media screen and (min-width: $tabl) {
+    padding-top: 99px;
   }
+  @media screen and (min-width: $desc) {
+    padding-top: 132px;
+  }
+}
+
+.top-first {
+  margin-bottom: 28px;
+  @media screen and (min-width: $tabl) {
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: $desc) {
+    margin-bottom: 36px;
+  }
+}
+
+.bottom-first {
+}
+
+.top-second {
+  margin-bottom: 28px;
+  margin-bottom: 28px;
+  @media screen and (min-width: $tabl) {
+    margin-bottom: 80px;
+  }
+  @media screen and (min-width: $desc) {
+    margin-bottom: 40px;
+  }
+}
+
+.bottom-second {
 }
 
 .read-more__overflow--text {

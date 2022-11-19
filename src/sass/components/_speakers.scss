@@ -4,11 +4,22 @@
   @media screen and (min-width: $mob) {
     padding-top: 35px;
   }
-  @media screen and (min-width: $mob) {
-    padding-top: 55px;
+  @media screen and (min-width: $tabl) {
+    padding-top: 20px;
   }
   @media screen and (min-width: $mob) {
-    padding-top: 101px;
+    padding-top: 0;
+  }
+}
+
+.section-header__speakers {
+  margin-top: 35px;
+
+  @media screen and (min-width: $tabl) {
+    margin-top: 24px;
+  }
+  @media screen and (min-width: $desc) {
+    margin-top: 100px;
   }
 }
 
@@ -52,27 +63,21 @@
 
 .speaker {
   text-align: center;
-  @media screen and (min-width: $mob) {
-    margin-bottom: 12px;
-    margin-top: 12px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    color: #3c322d;
-  }
+  margin-bottom: 12px;
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #3c322d;
+
   @media screen and (min-width: $tabl) {
     margin-bottom: 20px;
     margin-top: 20px;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
-    /* identical to box height */
-
     text-align: center;
-
-    /* Основной текст */
-
     color: #3c322d;
   }
 
@@ -82,25 +87,19 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
-    /* identical to box height */
-
     text-align: center;
-
-    /* Основной текст */
-
     color: #3c322d;
   }
 }
 
 .speaker-profession {
   text-align: center;
-  @media screen and (min-width: $mob) {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    text-align: center;
-    color: #3c322d;
-  }
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #3c322d;
+
   @media screen and (min-width: $tabl) {
     font-weight: 500;
     font-size: 14px;
