@@ -14,7 +14,7 @@
     @media screen and (min-width: 768px) {
       background-image: url(../img/header/header-tablet.png);
       background-size: cover;
-      background-repeat: no-repea;
+      background-repeat: no-repeat;
   
       @media (min-device-pixel-ratio: 2),
         (min-resolution: 192dpi),
@@ -69,11 +69,12 @@
     display: none;
     width: 30px;
     height: 16px;
+    margin-right: 20px;
+    padding: 0;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    margin-right: 20px;
-    padding: 0;
+
   
     @media screen and (min-width: 768px) {
       margin-right: 32px;
